@@ -1,12 +1,3 @@
-# Creating RESTAPI's in Python, Virtual environment: account_service
-# Purpose: Acts as an account service for customers
-# Accepts the payload and inserts into the Database
-# Create account: POST method(account_id, emirates id, customer name, address, dob, gender) 
-# Read account: GET method gets the account details of customer (in JSON format)
-# Update account: PUT/PATCH method updates overall account info or individual features of customer
-# Delete account: DELETE METHOD deletes the account
-# TO DO: Add acc_id to table
-
 import pymysql
 import mysql
 from flask import Flask, request, jsonify
