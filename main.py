@@ -57,10 +57,10 @@ def create_account():
     if account_id and emirates_id and address and customer_name and date_of_birth and gender and request.method == 'POST':
         connection = mysql.connect()
         cursor = connection.cursor(pymysql.cursors.DictCursor)
-        sqlQuery = "INSERT INTO account(account_id, emirates_id, address, customer_name, date_of_birth, gender) VALUES(%s, %s, %s, %s, %s, %s)"
+        sql_query = "INSERT INTO account(account_id, emirates_id, address, customer_name, date_of_birth, gender) VALUES(%s, %s, %s, %s, %s, %s)"
         print("Account added successfully!")
-        bindData = (account_id, emirates_id, address, customer_name, date_of_birth, gender)  
-        cursor.execute(sqlQuery, bindData)
+        bind_data = (account_id, emirates_id, address, customer_name, date_of_birth, gender)  
+        cursor.execute(sql_query, bind_data)
         connection.commit()
         unique_id = cursor.lastrowid
         response = jsonify('Account added successfully!')
@@ -81,9 +81,9 @@ def update_account():
     if account_id and emirates_id and address and customer_name and date_of_birth and gender and request.method == 'PUT':
         connection = mysql.connect()
         cursor = connection.cursor(pymysql.cursors.DictCursor)
-        sqlQuery = "UPDATE account SET customer_name = %s, emirates_id = %s, address = %s, date_of_birth = %s, gender = %s WHERE account_id = %s"
-        bindData = (customer_name, emirates_id, address, date_of_birth, gender, account_id)  
-        cursor.execute(sqlQuery, bindData)
+        sql_query = "UPDATE account SET customer_name = %s, emirates_id = %s, address = %s, date_of_birth = %s, gender = %s WHERE account_id = %s"
+        bind_data = (customer_name, emirates_id, address, date_of_birth, gender, account_id)  
+        cursor.execute(sql_query, bind_data)
         connection.commit()
         #unique_id = cursor.lastrowid
         response = jsonify('Account updated successfully!')
