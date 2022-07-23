@@ -4,3 +4,5 @@ An account service application for customers using RESTAPIs and MySQL as the dat
 - Read account: GET method gets the account details of customer.
 - Update account: PUT method updates overall account info.
 - Delete account: DELETE METHOD deletes the account.
+
+TESTING APPLICATIONS AND DATABASE: POSTMAN and MySQL.
